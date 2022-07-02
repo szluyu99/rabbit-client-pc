@@ -1,0 +1,11 @@
+// less mixin 混入就是，声明一段 css 代码或者函数
+// 在其他 css 选择器中调用，可复用包裹的代码
+
+// 鼠标经过上移阴影动画
+.hoverShadow () {
+  transition: all .5s;
+  &:hover {
+    transform: translate3d(0,-3px,0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+}
