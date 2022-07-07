@@ -27,12 +27,12 @@ export default function userLoginAfter() {
         Message({ type: "success", text: "登录成功" })
 
         //TODO 合并购物车
-        //TODO 将服务端购物车数据同步到本地u ya
+        //TODO 将服务端购物车数据同步到本地
     }
 
     // 登录失败
     const loginFailedFn = error => {
-        console.log(error);
+        console.log('登录失败', error);
         // const msg = error.err.response.data.message
         Message({ type: "error", text: error })
     }

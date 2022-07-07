@@ -7,6 +7,7 @@ html {
   height: 100%;
   font-size: 14px;
 }
+
 body {
   height: 100%;
   color: #333;
@@ -38,12 +39,13 @@ i {
 input[type="text"],
 input[type="search"],
 input[type="password"],
-input[type="checkbox"]{
+input[type="checkbox"] {
   padding: 0;
   outline: none;
   border: none;
   -webkit-appearance: none;
-  &::placeholder{
+
+  &::placeholder {
     color: #ccc;
   }
 }
@@ -111,6 +113,7 @@ ul {
       transition: opacity 0.5s 0.2s;
       z-index: 1;
     }
+
     &-to {
       opacity: 0;
     }
@@ -119,14 +122,15 @@ ul {
 
 /* 面包屑组件transition动画 */
 .fade-right {
+
   &-enter-from,
-  &-leave-to{
+  &-leave-to {
     transform: translateX(20px);
     opacity: 0;
   }
 
   &-enter-active,
-  &-leave-active{
+  &-leave-active {
     transition: all .5s;
   }
 
@@ -140,26 +144,31 @@ ul {
 // 表单
 .xtx-form {
   padding: 50px 0;
+
   &-item {
     display: flex;
     align-items: center;
     width: 700px;
     margin: 0 auto;
     padding-bottom: 25px;
+
     .label {
       width: 180px;
       padding-right: 10px;
       text-align: right;
       color: #999;
-      ~ .field {
+
+      ~.field {
         margin-left: 0;
       }
     }
+
     .field {
       width: 320px;
       height: 50px;
       position: relative;
       margin-left: 190px;
+
       .icon {
         position: absolute;
         left: 0;
@@ -169,43 +178,53 @@ ul {
         text-align: center;
         line-height: 50px;
         color: #999;
-        ~ .input {
+
+        ~.input {
           padding-left: 40px;
         }
       }
-      .input{
+
+      .input {
         border: 1px solid #e4e4e4;
         width: 320px;
         height: 50px;
         line-height: 50px;
         padding: 0 10px;
+
         &.err {
           border-color: @priceColor;
         }
-        &:focus,&:active{
+
+        &:focus,
+        &:active {
           border-color: @xtxColor;
         }
       }
+
       .checkbox {
         width: 20px;
         height: 20px;
         border: 1px solid #e4e4e4;
         margin-top: 15px;
+
         &:checked {
           border-color: transparent;
           color: @xtxColor;
         }
+
         &:checked::after {
           content: "✅";
         }
       }
     }
+
     .error {
       width: 180px;
       padding-left: 10px;
       color: @priceColor;
     }
   }
+
   .submit {
     width: 320px;
     height: 50px;

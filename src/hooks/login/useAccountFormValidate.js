@@ -33,6 +33,7 @@ export default function userAccountFormValidate() {
 
     //#region 账号登录
     const onAccountFormSubmit = accountFormHandleSubmit(value => {
+        console.log("账号登录", value);
         loginByAccountAndPassword(value).then(loginSuccessFn).catch(loginFailedFn)
     })
     //#endregion

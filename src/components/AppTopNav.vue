@@ -2,10 +2,10 @@
   <nav class="app-topnav">
     <div class="container">
       <ul>
-        <template v-if="user.token">
+        <template v-if="profile.token">
           <li>
             <RouterLink to="/member/home">
-              <i class="iconfont icon-user"></i>{{ user.account }}
+              <i class="iconfont icon-user"></i>{{ profile.account }}
             </RouterLink>
           </li>
           <li><a href="javascript:" @click="logout(this)">退出登录</a></li>
@@ -36,7 +36,7 @@ const userStore = useUserStore()
 const router = useRouter()
 
 // 获取用户信息
-const user = userStore.profile
+const profile = userStore.profile
 
 const logout = async (instance) => {
   userStore.setUser({}) // 清空用户信息

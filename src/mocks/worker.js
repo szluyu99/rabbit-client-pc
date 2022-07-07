@@ -2,6 +2,8 @@ import { setupWorker, rest } from 'msw'
 import { BASE_URL } from '@/utils/url'
 import { faker } from '@faker-js/faker'
 
+faker.locale = "zh_CN"
+
 // 1.创建一个用于做拦截请求工作的人
 export const worker = setupWorker(
     // 2.定义拦截请求程序

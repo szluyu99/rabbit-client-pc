@@ -10,6 +10,7 @@ import request from "@/utils/request";
  * @returns {*}
  */
 export function loginByAccountAndPassword({ account, password }) {
+  console.log('11111111111');
   return request.post("/login", { account, password });
 }
 

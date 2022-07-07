@@ -6,7 +6,7 @@
 // 测试 msw 是否拦截成功
 import request from '@/utils/request';
 request.get('/message').then(res => {
-  console.log("hello msg:", res);
+  console.log("msw working:", res);
 })
 </script>
 

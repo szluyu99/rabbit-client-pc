@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useUserStore = defineStore('user', {
   persist: true, // 持久化存储
-  state: () => ({
+  state: () =>  ({
     // 用户信息
     profile: {
       id: "", //用户id

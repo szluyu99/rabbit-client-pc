@@ -13,7 +13,7 @@ const instance = axios.create({
   // 基地址
   baseURL: BASE_URL,
   // 超时时间
-  timeout: 3000
+  timeout: 5000
 });
 
 /**
@@ -34,7 +34,7 @@ const baseRequest = options => {
   // 返回实例请求结果
   return instance(options)
     .then(res => {
-      // console.log(res);
+      console.log(res);
       // console.log("options", options);
       const data = res.data || {};
       // 请求失败（http 请求的状态码判断）
@@ -60,6 +60,7 @@ const baseRequest = options => {
       // 这里捕获的 err
       // 如果是 instance(options) 中 reject 触发，则 err 是 instance(options) 中 reject 的 err
       // 如果是 Promise.reject({ res, data }) 中 rejiect 触发，则 err 是 { res, data }
+      console.log(err);
       return Promise.reject({ msg: "请求失败", err });
     });
 };

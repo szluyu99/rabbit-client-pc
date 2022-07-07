@@ -24,6 +24,7 @@ export default defineConfig(({ command, mode }) => {
           additionalData: `
             @import "@/assets/styles/variables.less";
             @import "@/assets/styles/common.less";
+            @import "@/assets/styles/mixin.less";
           `,
         }
       }
