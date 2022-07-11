@@ -28,7 +28,7 @@ export default function useMenuList() {
     }))
     // 添加品牌类
     list.push(brand)
-    console.log("menuList:", list);
+    // console.log("menuList:", list);
     return list
   })
 }

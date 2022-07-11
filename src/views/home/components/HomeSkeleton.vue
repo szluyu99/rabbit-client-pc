@@ -9,14 +9,12 @@
 </template>
 
 <script setup name="HomeSkeleton">
-import { defineProps } from 'vue';
 const props = defineProps({
   bg: {
     type: String,
     default: '',
   },
 })
-const { bg } = props
 </script>
 
 <style scoped lang="less">

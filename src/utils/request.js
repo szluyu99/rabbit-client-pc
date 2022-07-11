@@ -34,7 +34,7 @@ const baseRequest = options => {
   // 返回实例请求结果
   return instance(options)
     .then(res => {
-      console.log(res);
+      // console.log(res);
       // console.log("options", options);
       const data = res.data || {};
       // 请求失败（http 请求的状态码判断）

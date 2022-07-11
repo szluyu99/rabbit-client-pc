@@ -13,7 +13,6 @@
 </template>
 
 <script setup name="HomePanel">
-import { defineProps } from 'vue';
 const props = defineProps({
   title: {
     type: String,
@@ -24,8 +23,6 @@ const props = defineProps({
     default: '',
   },
 });
-
-const { title, subTitle } = props
 </script>
 
 <style scoped lang="less">

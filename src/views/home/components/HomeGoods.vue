@@ -16,7 +16,6 @@
 </template>
 
 <script setup name="HomeGoods">
-import { defineProps } from 'vue';
 const props = defineProps({
   good: {
     type: Object,

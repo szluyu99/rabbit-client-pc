@@ -4,6 +4,7 @@ const HomePage = () => import('@/views/home/HomePage');
 const LoginPage = () => import("@/views/login/LoginPage");
 const TopCategoryPage = () => import("@/views/category/TopCategoryPage");
 const SubCategoryPage = () => import("@/views/category/SubCategoryPage");
+const GoodsDetailPage = () => import("@/views/goods/GoodsDetailPage");
 
 // 路由列表
 const routes = [
@@ -12,7 +13,7 @@ const routes = [
     // 分类
     { path: "/category/:id", component: TopCategoryPage },
     { path: "/category/sub/:id", component: SubCategoryPage },
-    // { path: "/goods/:id", component: GoodsDetailPage },
+    { path: "/goods/:id", component: GoodsDetailPage },
     /* 404 */
     {
         path: '/notfound',
