@@ -7,7 +7,6 @@ import {
     updateGoodsBySkuId,
     updateGoodsOfCartBySkuId,
 } from "@/api/cart";
-import { topCategories } from "@/api/constants";
 import { defineStore } from "pinia";
 
 export const useCartStore = defineStore('cart', {
@@ -57,6 +56,11 @@ export const useCartStore = defineStore('cart', {
         setCart(list) {
             this.list = list
         },
+
+        //TODO 购物车 store 功能
+        async addGoodsToCartAsync(goods) {
+            // 判断用户是否登录
+        }
     }
 
 })

@@ -1,11 +1,83 @@
 <template>
-  <h2>hhhhhhhhhhhhhhhhhhhh</h2>
+  <AppLayout>
+    <div class="xtx-goods-page">
+      <div class="container" v-if="goodsDetail">
+        <!-- 面包屑 -->
+        <XtxBread>
+          <XtxBreadItem path="/">首页</XtxBreadItem>
+          <XtxBreadItem :path="`/category/${goodsDetail?.categories[1].id}`">
+            {{ goodsDetail?.categories[1].name }}
+          </XtxBreadItem>
+          <XtxBreadItem :path="`/category/sub/${goodsDetail?.categories[0].id}`">
+            {{ goodsDetail?.categories[0].name }}
+          </XtxBreadItem>
+          <XtxBreadItem :id="goodsDetail?.id">
+            {{ goodsDetail?.name }}
+          </XtxBreadItem>
+        </XtxBread>
+        <!-- 商品信息 -->
+        <div class="goods-info">
+          <!-- 左侧 -->
+          <div class="media">
+            <!-- 商品图片 -->
+            <GoodsImages :images="goodsDetail.mainPictures" />
+            <!-- 商品销售信息 -->
+            <GoodsSales />
+          </div>
+          <!-- 右侧 -->
+          <div class="spec">
+            <!-- 商品信息 -->
+            <GoodsInfo :goods="goodsDetail" />
+            <!-- 商品规格选择 -->
+            <GoodsSku :specs="goodsDetail.specs" :skus="goodsDetail.skus" @onSpecChange="onSpecChange" />
+            <XtxNumberBox label="数量" :max="goodsDetail.inventory" v-model="count" />
+            <XtxButton type="primary" :style="{ marginTop: '20px' }" @click="addCart">加入购物车</XtxButton>
+          </div>
+        </div>
+        <!-- 商品推荐 -->
+        <GoodsRelevant :goodsId="goodsDetail.id"></GoodsRelevant>
+        <!-- 商品详情 -->
+        <!-- 商品详情 -->
+        <div class="goods-footer">
+          <div class="goods-article">
+            <!-- 商品+评价 -->
+            <GoodsTab />
+            <!-- 注意事项 -->
+            <div class="goods-warn">
+              <!-- 注意事项 -->
+              <GoodsWarn />
+            </div>
+          </div>
+          <!-- 24热榜 -->
+          <div class="goods-aside">
+            <h2>热榜</h2>
+            <GoodsHot :type="1" />
+            <GoodsHot :type="2" />
+            <GoodsHot :type="3" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </AppLayout>
 </template>
 
 <script setup name="GoodsDetailPage">
+import { provide } from 'vue'
+import AppLayout from '@/components/AppLayout'
+import useGoods from '@/hooks/goods/useGoods'
+import GoodsImages from '@/views/goods/components/GoodsImages'
+import GoodsSales from '@/views/goods/components/GoodsSales'
+import GoodsInfo from '@/views/goods/components/GoodsInfo'
+import GoodsSku from '@/views/goods/components/GoodsSku'
+import GoodsRelevant from '@/views/goods/components/GoodsRelevant'
+import GoodsTab from '@/views/goods/components/GoodsTab'
+import GoodsHot from '@/views/goods/components/GoodsHot'
+import GoodsWarn from '@/views/goods/components/GoodsWarn'
 
+const { result: goodsDetail, onSpecChanged, count, addCart } = useGoods()
+// 通过 provide 注入 goodsDetail 数据
+provide('goodsDetail', goodsDetail)
 </script>
-
 
 <style scoped lang="less">
 .goods-info {
