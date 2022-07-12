@@ -72,7 +72,7 @@ import GoodsTab from '@/views/goods/components/GoodsTab'
 import GoodsHot from '@/views/goods/components/GoodsHot'
 import GoodsWarn from '@/views/goods/components/GoodsWarn'
 
-const { result: goodsDetail, onSpecChanged, count, addCart } = useGoods()
+const { result: goodsDetail, onSpecChange, count, addCart } = useGoods()
 // 通过 provide 注入 goodsDetail 数据
 provide('goodsDetail', goodsDetail)
 </script>

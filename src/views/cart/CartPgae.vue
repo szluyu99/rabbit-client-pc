@@ -1,10 +1,6 @@
 <template>
-  <h2>购物车</h2>
+  <h2>testsssss</h2>
 </template>
-
-<script setup name="CartPage">
-
-</script>
 
 <style scoped lang="less">
 .tc {

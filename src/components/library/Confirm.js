@@ -21,7 +21,7 @@ export default function Confirm({ title, content }) {
       vnode.el.children[0].classList.remove("fade");
       // 移除虚拟dom可重新渲染，动画时间400ms
       setTimeout(() => {
-        render(nll, container); //清除虚拟dom
+        render(null, container); //清除虚拟dom
       }, 400);
     };
 

@@ -64,13 +64,13 @@ export default function useGoodsSku(props, emit) {
   const updateDisabled = (specs, pathMap) => {
     specs.forEach((spec, index) => {
       // if (userSelected.value[index]) return;
-      console.log("判断undefined", spec.name); //@log
+      // console.log("判断undefined", spec.name); //@log
       const selected = JSON.parse(JSON.stringify(userSelected.value));
-      console.log("当前选择", selected); //@log
+      // console.log("当前选择", selected); //@log
       spec.values.forEach((value) => {
         if (value.selected) return;
         selected[index] = value.name;
-        console.log("判断选择", selected); //@log
+        // console.log("判断选择", selected); //@log
         const key = selected.filter((item) => item).join("_");
         value.disabled = !(key in pathMap);
       });
@@ -92,7 +92,7 @@ export default function useGoodsSku(props, emit) {
     });
     return result;
   });
-  console.log(userSelected);
+  // console.log(userSelected);
   //#endregion
 
   //#region 五、设置默认选中
@@ -118,7 +118,7 @@ export default function useGoodsSku(props, emit) {
     if (selected.length === specs.length) {
       const skuId = pathMap[selected.join("_")];
       const target = skus.find((sku) => sku.id === skuId);
-      console.log("target", target); //@log
+      // console.log("target", target); //@log
       // 触发父组件传递的方法
       emit("onSpecChange", {
         skuId,

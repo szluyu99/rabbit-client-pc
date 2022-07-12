@@ -1,9 +1,12 @@
 <template>
   <div class="cart">
+    <!-- 购物车按钮 -->
     <RouterLink class="curr" to="/cart">
       <i class="iconfont icon-cart"></i><em>{{ effectiveGoodsCount }}</em>
     </RouterLink>
+    <!-- 浮动窗 -->
     <div class="layer" v-if="effectiveGoodsCount > 0 && !isCartPage">
+      <!-- 物品列表 -->
       <div class="list">
         <div class="item" v-for="goods in effectiveGoodsList" :key="goods.id">
           <RouterLink :to="`/goods/${goods.id}`">
@@ -17,9 +20,14 @@
               <p class="count">x{{ goods.count }}</p>
             </div>
           </RouterLink>
-          <i class="iconfont icon-close-new" @click="deleteGoodsOfCartBySkuId(goods.skuId)"></i>
+          <!-- 删除按钮 -->
+          <i
+            class="iconfont icon-close-new"
+            @click="deleteGoodsOfCartBySkuId(goods.skuId)"
+          ></i>
         </div>
       </div>
+      <!-- 底部结算栏 -->
       <div class="foot">
         <div class="total">
           <p>共 {{ effectiveGoodsCount }} 件商品</p>
@@ -38,13 +46,13 @@ import { ref } from "vue";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
 import useCart from "@/hooks/cart/useCart";
 
-const route = useRoute()
+const route = useRoute();
 
-//TODO 完成购物车功能
 const {
   effectiveGoodsList,
   effectiveGoodsCount,
   effectiveGoodsPrice,
+  deleteGoodsOfCartBySkuId,
 } = useCart();
 
 // 是否是购物车页面
@@ -55,7 +63,6 @@ onBeforeRouteUpdate((to) => {
   isCartPage.value = to.path === "/cart";
 });
 </script>
-
 
 <style scoped lang="less">
 .cart {
