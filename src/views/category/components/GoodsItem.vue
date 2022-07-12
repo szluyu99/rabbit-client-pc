@@ -24,20 +24,25 @@ const props = defineProps({
   padding: 20px 30px;
   text-align: center;
   .hoverShadow();
+
   img {
     width: 160px;
     height: 160px;
   }
+
   p {
     padding-top: 10px;
   }
+
   .name {
     font-size: 16px;
   }
+
   .desc {
     color: #999;
     height: 29px;
   }
+
   .price {
     color: @priceColor;
     font-size: 20px;

@@ -8,7 +8,7 @@ module.exports = {
         parser: "babel-eslint",
     },
     rules: {
-        "no-console": "warn",
-        "no-debugger": "warn",
+        "no-console": import.meta.env.DEV ? "warn": "off",
+        "no-debugger": import.meta.env.DEV ? "warn": "off",
     },
 };

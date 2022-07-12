@@ -37,14 +37,12 @@
         <!-- 商品推荐 -->
         <GoodsRelevant :goodsId="goodsDetail.id"></GoodsRelevant>
         <!-- 商品详情 -->
-        <!-- 商品详情 -->
         <div class="goods-footer">
           <div class="goods-article">
             <!-- 商品+评价 -->
             <GoodsTab />
             <!-- 注意事项 -->
             <div class="goods-warn">
-              <!-- 注意事项 -->
               <GoodsWarn />
             </div>
           </div>

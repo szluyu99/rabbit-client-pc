@@ -34,8 +34,26 @@
 </template>
 
 <script setup name="AppHeaderCart">
+import { ref } from "vue";
+import { onBeforeRouteUpdate, useRoute } from "vue-router";
+import useCart from "@/hooks/cart/useCart";
+
+const route = useRoute()
+
 //TODO 完成购物车功能
-const effectiveGoodsCount = 1
+const {
+  effectiveGoodsList,
+  effectiveGoodsCount,
+  effectiveGoodsPrice,
+} = useCart();
+
+// 是否是购物车页面
+const isCartPage = ref(route.path === "/cart");
+
+// 路由发生更新时重新判断当前页面是否是购物车页面
+onBeforeRouteUpdate((to) => {
+  isCartPage.value = to.path === "/cart";
+});
 </script>
 
 

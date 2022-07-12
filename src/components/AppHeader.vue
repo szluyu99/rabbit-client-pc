@@ -1,14 +1,18 @@
 <template>
   <header class="app-header">
     <div class="container">
+      <!-- 图标 -->
       <h1 class="logo">
         <RouterLink to="/"></RouterLink>
       </h1>
+      <!-- 导航栏 -->
       <AppHeaderNav />
+      <!-- 搜索框 -->
       <div class="search">
         <i class="iconfont icon-search"></i>
         <input type="text" placeholder="搜一搜" />
       </div>
+      <!-- 购物车 -->
       <AppHeaderCart />
     </div>
   </header>
