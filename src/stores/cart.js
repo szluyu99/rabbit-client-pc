@@ -148,7 +148,7 @@ export const useCartStore = defineStore("cart", {
       }
     },
     // 更新购物车中的商品（自动更新）
-    async updateGoodsBySkuId() {
+    async updateGoodsBySkuIdAsync() {
       if (userStore.profile.token) {
         // 已登录
         this.updateCartListAsync();

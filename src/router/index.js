@@ -1,11 +1,18 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const HomePage = () => import("@/views/home/HomePage");
 const LoginPage = () => import("@/views/login/LoginPage");
+const HomePage = () => import("@/views/home/HomePage");
+// 分类
 const TopCategoryPage = () => import("@/views/category/TopCategoryPage");
 const SubCategoryPage = () => import("@/views/category/SubCategoryPage");
+// 商品详情
 const GoodsDetailPage = () => import("@/views/goods/GoodsDetailPage");
+// 购物车
 const CartPage = () => import("@/views/cart/CartPage");
+// 结算 & 支付
+const CheckoutPage = () => import("@/views/pay/CheckoutPage");
+const PayPage = () => import("@/views/pay/PayPage");
+const PayResultPage = () => import("@/views/pay/PayResultPage");
 
 // 路由列表
 const routes = [
@@ -15,7 +22,12 @@ const routes = [
   { path: "/category/:id", component: TopCategoryPage },
   { path: "/category/sub/:id", component: SubCategoryPage },
   { path: "/goods/:id", component: GoodsDetailPage },
+  // 购物车
   { path: "/cart", component: CartPage },
+  // 结算 & 支付
+  { path: "/checkout/order", component: CheckoutPage },
+  { path: "/checkout/pay", component: PayPage },
+  { path: "/pay/callback", component: PayResultPage },
   /* 404 */
   {
     path: "/notfound",
